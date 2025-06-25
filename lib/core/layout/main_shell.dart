@@ -1,0 +1,147 @@
+import 'package:flutter/material.dart';
+import 'package:some_logic/views/multi_selections.dart';
+import 'package:some_logic/views/second_view.dart';
+import 'package:some_logic/views/third_view.dart';
+
+class MainShell extends StatefulWidget {
+  const MainShell({super.key});
+
+  @override
+  State<MainShell> createState() => _MainShellState();
+}
+
+class _MainShellState extends State<MainShell> {
+  final PageController _pageController = PageController();
+  final List<Widget> _pages = [SingleSelections(), SecondView(), ThirdView()];
+
+  int _currentIndex = 0;
+  @override
+  Widget build(BuildContext context) {
+    return
+    ///first shell setup
+    // Scaffold(
+    //   body: PageView(
+    //     controller: _pageController,
+    //     physics: const NeverScrollableScrollPhysics(),
+    //     children: _pages,
+    //     onPageChanged: (index) {
+    //       setState(() {
+    //         _currentIndex = index;
+    //       });
+    //     },
+    //   ),
+    //   bottomNavigationBar: Container(
+    //     height: 100,
+    //     width: double.infinity,
+    //     color: Colors.white,
+    //     child: Row(
+    //       mainAxisAlignment: MainAxisAlignment.center,
+    //       children: [
+    //         ///back button
+    //         GestureDetector(
+    //           onTap: () {
+    //             if (_currentIndex > 0) {
+    //               _pageController.jumpToPage(_currentIndex - 1);
+    //             }
+    //           },
+    //           child: Container(
+    //             padding: const EdgeInsets.symmetric(horizontal: 20),
+    //             height: 50,
+    //             color: Colors.black,
+    //             child: Icon(Icons.arrow_back_ios_new,
+    //               color: Colors.white,
+    //             ),
+    //           ),
+    //         ),
+    //         SizedBox(width: 20
+    //         ),
+    //         ///next button
+    //         GestureDetector(
+    //           onTap: () {
+    //             if (_currentIndex < _pages.length - 1) {
+    //               _pageController.jumpToPage(_currentIndex + 1);
+    //             }
+    //           },
+    //           child: Container(
+    //             padding: const EdgeInsets.symmetric(horizontal: 20),
+    //             color: Colors.black,
+    //             height: 50,
+    //             child: Row(
+    //               mainAxisAlignment: MainAxisAlignment.center,
+    //               children: [
+    //                 Text(
+    //                   'Next Page',
+    //                   style: TextStyle(color: Colors.white, fontSize: 20),
+    //                 ),
+    //                 SizedBox(width: 10),
+    //                 Icon(Icons.arrow_forward_ios,
+    //                   color: Colors.white,
+    //                 ),
+    //               ],
+    //             ),
+    //           ),
+    //         ),
+    //       ],
+    //     ),
+    //   ),
+    // );
+    ///----------------------------------------------------------------
+    ///second shell setup
+    Scaffold(
+      body: _pages[_currentIndex],
+      bottomNavigationBar: Container(
+        height: 100,
+        width: double.infinity,
+        color: Colors.white,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ///back button
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  _currentIndex = _currentIndex > 0 ? _currentIndex - 1 : 0;
+                });
+              },
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                height: 50,
+                color: Colors.black,
+                child: Icon(Icons.arrow_back_ios_new, color: Colors.white),
+              ),
+            ),
+            SizedBox(width: 20),
+
+            ///next button
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  _currentIndex =
+                      _currentIndex < _pages.length - 1
+                          ? _currentIndex + 1
+                          : _pages.length - 1;
+                });
+              },
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                color: Colors.black,
+                height: 50,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Next Page',
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                    SizedBox(width: 10),
+                    Icon(Icons.arrow_forward_ios, color: Colors.white),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
