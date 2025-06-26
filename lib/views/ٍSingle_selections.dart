@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:some_logic/core/models/plats_model.dart';
+import 'package:some_logic/core/models/product_model.dart';
 
 class SingleSelections extends StatefulWidget {
   const SingleSelections({super.key});
@@ -9,29 +9,29 @@ class SingleSelections extends StatefulWidget {
 }
 
 class _SingleSelectionsState extends State<SingleSelections> {
-  final List<PlatsModel> plats = [
-    PlatsModel(
+  final List<ProductModel> plats = [
+    ProductModel(
       id: "1",
       title: "Butterfly",
       image: "assets/carvel/Butterfly.png",
     ),
-    PlatsModel(id: "2", title: "Circle", image: "assets/carvel/Circle.png"),
-    PlatsModel(id: "3", title: "Flower", image: "assets/carvel/flower.png"),
-    PlatsModel(id: "4", title: "Hearts", image: "assets/carvel/Hearts.png"),
-    PlatsModel(id: "5", title: "Hexagon", image: "assets/carvel/Hexagon.png"),
-    PlatsModel(
+    ProductModel(id: "2", title: "Circle", image: "assets/carvel/Circle.png"),
+    ProductModel(id: "3", title: "Flower", image: "assets/carvel/flower.png"),
+    ProductModel(id: "4", title: "Hearts", image: "assets/carvel/Hearts.png"),
+    ProductModel(id: "5", title: "Hexagon", image: "assets/carvel/Hexagon.png"),
+    ProductModel(
       id: "6",
       title: "Large Flower",
       image: "assets/carvel/large_flower.png",
     ),
-    PlatsModel(
+    ProductModel(
       id: "7",
       title: "Large Square",
       image: "assets/carvel/large_square.png",
     ),
-    PlatsModel(id: "8", title: "Leaf", image: "assets/carvel/leaf.png"),
-    PlatsModel(id: "9", title: "Oval", image: "assets/carvel/Oval.png"),
-    PlatsModel(
+    ProductModel(id: "8", title: "Leaf", image: "assets/carvel/leaf.png"),
+    ProductModel(id: "9", title: "Oval", image: "assets/carvel/Oval.png"),
+    ProductModel(
       id: "10",
       title: "Small Square",
       image: "assets/carvel/Small_Square.png",
@@ -122,7 +122,7 @@ class _SingleSelectionsState extends State<SingleSelections> {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text('${plats[index].title} selected!'),
-                            duration:  Duration(milliseconds: 500),
+                            duration: Duration(milliseconds: 500),
                           ),
                         );
                       },
