@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:some_logic/views/multi_selections.dart';
-import 'package:some_logic/views/second_view.dart';
+import 'package:some_logic/views/%D9%8DSingle_selections.dart';
+import 'package:some_logic/views/image_selection.dart';
 import 'package:some_logic/views/third_view.dart';
 
 class MainShell extends StatefulWidget {
@@ -11,8 +11,13 @@ class MainShell extends StatefulWidget {
 }
 
 class _MainShellState extends State<MainShell> {
-  final PageController _pageController = PageController();
-  final List<Widget> _pages = [SingleSelections(), SecondView(), ThirdView()];
+  //controller for page view
+  // final PageController _pageController = PageController();
+  final List<Widget> _pages = [
+    SingleSelections(),
+    ImageSelections(),
+    ThirdView(),
+  ];
 
   int _currentIndex = 0;
   @override
@@ -106,8 +111,10 @@ class _MainShellState extends State<MainShell> {
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 height: 50,
-                color: Colors.black,
-                child: Icon(Icons.arrow_back_ios_new, color: Colors.white),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black, width: 1),
+                ),
+                child: Icon(Icons.arrow_back_ios_new, color: Colors.black),
               ),
             ),
             SizedBox(width: 20),
