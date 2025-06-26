@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:some_logic/views/multi_selections.dart';
+import 'package:some_logic/views/%D9%8DSingle_selections.dart';
 import 'package:some_logic/views/second_view.dart';
 import 'package:some_logic/views/third_view.dart';
 
@@ -11,7 +11,8 @@ class MainShell extends StatefulWidget {
 }
 
 class _MainShellState extends State<MainShell> {
-  final PageController _pageController = PageController();
+  //controller for page view
+  // final PageController _pageController = PageController();
   final List<Widget> _pages = [SingleSelections(), SecondView(), ThirdView()];
 
   int _currentIndex = 0;
