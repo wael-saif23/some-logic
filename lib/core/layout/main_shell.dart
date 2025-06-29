@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:some_logic/views/%D9%8DSingle_selections.dart';
 import 'package:some_logic/views/image_selection.dart';
+import 'package:some_logic/views/multi_selections.dart';
 import 'package:some_logic/views/toggle_selections.dart';
 
 class MainShell extends StatefulWidget {
@@ -17,6 +18,7 @@ class _MainShellState extends State<MainShell> {
     SingleSelections(),
     ImageSelections(),
     ToggleSelections(),
+    MultiSelections(),
   ];
 
   int _currentIndex = 0;
