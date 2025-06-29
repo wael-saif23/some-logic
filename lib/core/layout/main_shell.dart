@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:some_logic/views/%D9%8DSingle_selections.dart';
-import 'package:some_logic/views/image_selection.dart';
-import 'package:some_logic/views/multi_selections.dart';
-import 'package:some_logic/views/toggle_selections.dart';
+import 'package:some_logic/views/one/%D9%8DSingle_selections.dart';
+import 'package:some_logic/views/one/image_selection.dart';
+import 'package:some_logic/views/one/multi_selections.dart';
+import 'package:some_logic/views/one/toggle_selections.dart';
+import 'package:some_logic/views/two/upload_image.dart';
 
 class MainShell extends StatefulWidget {
   const MainShell({super.key});
@@ -19,6 +20,7 @@ class _MainShellState extends State<MainShell> {
     ImageSelections(),
     ToggleSelections(),
     MultiSelections(),
+    UploadImage(),
   ];
 
   int _currentIndex = 0;
