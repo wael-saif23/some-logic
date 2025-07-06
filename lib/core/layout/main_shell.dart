@@ -5,6 +5,7 @@ import 'package:some_logic/views/one/multi_selections.dart';
 import 'package:some_logic/views/one/toggle_selections.dart';
 import 'package:some_logic/views/two/upload_image.dart';
 import 'package:some_logic/views/two/upload_multi_images.dart';
+import 'package:some_logic/views/two/upload_video.dart';
 
 class MainShell extends StatefulWidget {
   const MainShell({super.key});
@@ -23,6 +24,7 @@ class _MainShellState extends State<MainShell> {
     MultiSelections(),
     UploadImage(),
     UploadMultiImages(),
+    UploadVideo(),
   ];
 
   int _currentIndex = 0;
