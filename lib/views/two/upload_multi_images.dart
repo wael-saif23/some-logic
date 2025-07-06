@@ -22,9 +22,8 @@ class _UploadMultiImagesState extends State<UploadMultiImages> {
     }
 
     setState(() {
-      for (int i = 0; i < selectedImages.length; i++) {
-        selectedImages.removeRange(3, selectedImages.length);
-        _images[i] = selectedImages[i];
+      for (int i = 0; i < 3; i++) {
+        _images[i] = i<selectedImages.length? selectedImages[i]: null;
       }
     });
   }
