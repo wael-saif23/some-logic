@@ -22,9 +22,8 @@ class _UploadMultiImagesState extends State<UploadMultiImages> {
     }
 
     setState(() {
-      for (int i = 0; i < selectedImages.length; i++) {
-        selectedImages.removeRange(3, selectedImages.length);
-        _images[i] = selectedImages[i];
+      for (int i = 0; i < 3; i++) {
+        _images[i] = i<selectedImages.length? selectedImages[i]: null;
       }
     });
   }
@@ -42,6 +41,7 @@ class _UploadMultiImagesState extends State<UploadMultiImages> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: List.generate(_images.length, (index) {
+                    final image = _images[index];
                     return Container(
                       width: 100,
                       height: 100,
@@ -52,9 +52,9 @@ class _UploadMultiImagesState extends State<UploadMultiImages> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child:
-                          _images[index] != null
+                          image != null
                               ? Image.file(
-                                File(_images[index]!.path),
+                                File(image.path),
                                 fit: BoxFit.cover,
                               )
                               : SizedBox.shrink(),
