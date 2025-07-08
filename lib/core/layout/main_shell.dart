@@ -3,6 +3,7 @@ import 'package:some_logic/views/one/%D9%8DSingle_selections.dart';
 import 'package:some_logic/views/one/image_selection.dart';
 import 'package:some_logic/views/one/multi_selections.dart';
 import 'package:some_logic/views/one/toggle_selections.dart';
+import 'package:some_logic/views/three/search_page.dart';
 import 'package:some_logic/views/two/upload_files.dart';
 import 'package:some_logic/views/two/upload_image.dart';
 import 'package:some_logic/views/two/upload_multi_images.dart';
@@ -27,6 +28,9 @@ class _MainShellState extends State<MainShell> {
     UploadMultiImages(),
     UploadVideo(),
     UploadFiles(),
+  SearchPage(),
+    
+  
   ];
 
   int _currentIndex = 0;
