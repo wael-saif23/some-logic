@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:some_logic/views/four/form_feature.dart';
 import 'package:some_logic/views/one/%D9%8DSingle_selections.dart';
 import 'package:some_logic/views/one/image_selection.dart';
 import 'package:some_logic/views/one/multi_selections.dart';
@@ -29,7 +30,7 @@ class _MainShellState extends State<MainShell> {
     UploadVideo(),
     UploadFiles(),
   SearchPage(),
-    
+    FormFeature(),
   
   ];
 
